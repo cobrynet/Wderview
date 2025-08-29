@@ -1,8 +1,17 @@
-import { createRoot } from "react-dom/client";
-import "../tailwind.css";
-
-createRoot(document.getElementById("app") as HTMLElement).render(
-  <div className="min-h-screen grid place-items-center">
-    <h1 className="text-4xl font-bold text-indigo-600">Hello from Vite ✅</h1>
-  </div>
-);
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Wederview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Fonts opzionali -->
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Baskervville+SC:400|Montserrat:300,400|Baskervville:400,italic|Ballet:400");
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- AVVIO dell'app React con Vite -->
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>
