@@ -1,10 +1,17 @@
-module.exports = {
+// tailwind.config.js (ESM, perché in package.json hai "type": "module")
+import tailwindcssAnimate from "tailwindcss-animate";
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: "class",
   content: [
+    "./index.html",
     "./src/**/*.{html,js,ts,jsx,tsx}",
-    "app/**/*.{ts,tsx}",
-    "components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
   ],
   theme: {
+    container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -72,8 +79,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
-    container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
   },
-  plugins: [],
-  darkMode: ["class"],
+  plugins: [tailwindcssAnimate],
 };
+
