@@ -1,14 +1,16 @@
-import react from "@vitejs/plugin-react";
-import tailwind from "tailwindcss";
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "node:path";
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "./",
-  css: {
-    postcss: {
-      plugins: [tailwind()],
-    },
-  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src")
+      // se vuoi l'alias per shadcn/ui: "@/components/ui" -> "src/components/ui"
+      // "@" già punterà a "src", quindi importa così: "@/components/ui/button"
+    }
+  }
 });
+
